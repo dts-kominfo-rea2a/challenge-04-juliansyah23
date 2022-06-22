@@ -13,10 +13,10 @@ const createDate = (ArrDates, Params = null) => {
 	  for(let i = 0; i < ArrDates.length; i++){
 		  result.push(Math.round(Date.parse(ArrDates[i]) / 1000));
 	  }
-	 return result.sort().join("-");
+	 return result.sort().join("-").toString();
   }
   
-  return Math.round(Date.parse(ArrDates[Params]) / 1000)
+  return Math.round(Date.parse(ArrDates[Params]) / 1000).toString();
   
 };
 
