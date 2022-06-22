@@ -6,9 +6,19 @@ const dates = [
   "2021-04-05 00:00:00 UTC+2", // 1617573600 (epoch time, dalam detik)
   "2020-02-03 UTC+7", // 1580662800 (epoch time, dalam detik)
 ];
-
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (ArrDates, Params = null) => {
+  let result = [];
+  if(Params == null){
+	  for(let i = 0; i < ArrDates.length; i++){
+		  result.push(Math.round(Date.parse(ArrDates[i]) / 1000));
+	  }
+	 return result.sort().join("-");
+  }
+  
+  return Math.round(Date.parse(ArrDates[Params]) / 1000)
+  
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
